@@ -426,11 +426,12 @@
 
 			<h2>Usage</h2>
 
-			<h3>LESS / SASS</h3>
+			<h3>LESS</h3>
 
 			<pre class="code">
 				<code>
-#mdgrid > .create(desktop, 12, 60px, 20px);
+// default: 12x60 + 12x20 = 960
+.mdgrid(desktop, 12, 60px, 20px);
 
 // large desktops
 @media (min-width: 1221px) {
@@ -459,6 +460,50 @@
 	.mdgrid(mobile, 2, 160px, 20px);
 
 }
+				</code>
+			</pre>
+
+			<h3>SASS</h3>
+			<pre class="code">
+				<code>
+// default: 12x60 + 12x20 = 960
+@include mdgrid(desktop, 12, 60px, 20px);
+
+
+// large desktops
+@media (min-width: 1221px) {
+
+	// 12x80 + 12x20 = 1200
+	@include mdgrid(desktop, 12, 80px, 20px);
+
+}
+
+// tablet & small desktops
+@media (min-width: 768px) and (max-width: 979px) {
+
+	// 6x108 + 6x20 = 768px
+	@include mdgrid(tablet, 6, 108px, 20px);
+
+
+}
+
+// phones
+@media screen and (max-width: 767px) {
+
+	// 2x220 + 2x20 = 480px
+	@include mdgrid(mobile, 2, 220px, 20px);
+
+}
+
+// phones old
+@media screen and (max-width: 500px) {
+
+	// 2x160 + 2x20 = 360px
+	@include mdgrid(mobile, 2, 160px, 20px);
+
+}
+
+
 				</code>
 			</pre>
 
