@@ -57,11 +57,40 @@ h2 {
 }
 
 
-
-
 .label_d { display: block; }
 .label_t, .label_m { display: none; }
 
+
+a.btn {
+	display:inline-block;
+	background: darken(#79ceb0, 10%);
+	border: 0;
+	.border-radius(3px);
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 10px 17px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+
+	.transition(background-color 1s);
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		background: lighten(#79ceb0, 5%);
+		.transition(background-color 1s);
+	}
+}
+
+pre {
+	background: lighten(#a4b4b3, 20%);
+	padding:20px;
+	.border-radius(3px);
+	font-size:11px;
+}
 
 
 // mdgrid creation
@@ -144,5 +173,7 @@ h2 {
 	}
 
 }
+
+
 
 

@@ -31,6 +31,8 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
 </head>
@@ -41,7 +43,9 @@
 		<div class="container">
 
 
-			<h1>mdGrid <small>super coole slogan hier</small></h1>
+			<h1>mdGrid <small>responsive. extendable. customizable.</small></h1>
+
+			<a href="https://github.com/dannzyx/mdgrid" class="btn">Fork us, hard</a>
 
 			<hr/>
 
@@ -420,10 +424,72 @@
 
 
 
+			<h2>Usage (LESS)</h2>
+
+			<pre class="code">
+#mdgrid > .create(desktop, 12, 60px, 20px);
+
+
+// large desktops
+@media (min-width: 1221px) {
+
+	// 12x80 + 12x20 = 1200
+	#mdgrid > .create(desktop, 12, 80px, 20px);
+
+}
+
+// tablet & small desktops
+@media (min-width: 768px) and (max-width: 979px) {
+
+
+	// 12x44 + 12x20 = 768
+	#mdgrid > .create(desktop, 12, 44px, 20px);
+
+	// 6x108 + 6x20 = 768px
+	#mdgrid > .create(tablet, 6, 108px, 20px);
+
+
+}
+
+// phones
+@media screen and (max-width: 767px) {
+
+
+	// 12x30 + 12x10 = 480px
+	#mdgrid > .create(desktop, 12, 20px, 20px);
+
+	// 2x220 + 2x20 = 480px
+	#mdgrid > .create(mobile, 2, 220px, 20px);
+
+
+}
+
+// phones old
+@media screen and (max-width: 500px) {
+
+	// 12x20 + 12x10 = 360
+	#mdgrid > .create(desktop, 12, 10px, 20px);
+
+	// 2x160 + 2x20 = 360px
+	#mdgrid > .create(mobile, 2, 160px, 20px);
+
+}
+			</pre>
+
+
+			<h2>Usage (SASS)</h2>
+
+			<pre class="code">
+@include create
+@include mdgrid();
+			</pre>
+
+
+
 		</div>
 
 
-
+		<script src="js/main.js"></script>
 
 </body>
 
