@@ -1,12 +1,3 @@
-/*
-Default variables;
-change this to your liking.
-*/
-
-@total-columns: 12;
-@column-width: 	60px;
-@gutter-width: 	20px;
-
 // clearfix
 .clearfix() {
 	&:before,
@@ -31,46 +22,16 @@ change this to your liking.
 }
 
 
+// defaults
+.row, .container {
+	.clearfix;
+}
+
 // grid function
-.mdgrid(@prefix:desktop, @total-columns:@total-columns, @column-width:@column-width, @gutter-width:@gutter-width) {
+.mdgrid(@prefix:desktop, @total-columns:12, @column-width:60px, @gutter-width:20px) {
 
 	// calculate total width of the container
 	@total-width: (@column-width * @total-columns) + (@total-columns - 1) * @gutter-width;
-
-	// loop generate column names and values
-	.generateCols (@index) when (@index > 0) {
-
-		.@{prefix}-@{index} {
-			.col(@index, @column-width);
-		}
-
-		.generateCols(@index - 1);
-	}
-
-	// loop generate offset names and values
-	.generateOffsets (@index) when (@index > 0) {
-
-		.@{prefix}-offset-@{index} {
-			.offset(@index, @column-width);
-		}
-
-		.generateOffsets(@index - 1);
-	}
-
-	// column function
-	.col (@columns, @columnwidth) {
-		width: (@columnwidth * @columns) + (@columns - 1) * @gutter-width;
-	}
-
-	// offset function
-	.offset (@columns, @columnwidth) {
-		margin-left: (@columnwidth * @columns) + (@gutter-width * (@columns + 1));
-	}
-
-	// create row class
-	.row {
-		margin-left: -(@gutter-width);
-	}
 
 	[class*="@{prefix}"] {
 		float: left;
@@ -78,25 +39,35 @@ change this to your liking.
 		margin-left: (@gutter-width);
 	}
 
+	// loop generate column names and values
+	.generateCols (@index) when (@index >= 0) {
+		.@{prefix}-@{index} {
+			width: (@column-width * @index) + (@index - 1) * @gutter-width;
+		}
+
+		.generateCols(@index - 1);
+	}
+	.generateCols(@total-columns);
+
+	// loop generate offset names and values
+	.generateOffsets (@index) when (@index >= 0) {
+		.@{prefix}-offset-@{index} {
+			margin-left: (@column-width * @index) + (@gutter-width * (@index + 1));
+		}
+
+		.generateOffsets(@index - 1);
+	}
+	.generateOffsets(@total-columns);
+
 	// create container class
 	.container {
 		width: @total-width;
 	}
 
-	.generateCols (0) {}
-	.generateCols(@total-columns);
-	.generateOffsets (0) {}
-	.generateOffsets(@total-columns);
-
+	// create row class
+	.row {
+		margin-left: -(@gutter-width);
+	}
 }
 
 
-
-// defaults
-.row {
-	.clearfix;
-}
-
-.container {
-	.clearfix;
-}
