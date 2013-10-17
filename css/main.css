@@ -165,10 +165,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*
-Default variables;
-change this to your liking.
-*/
 .clearfix:before, .row:before, .container:before, .clearfix:after, .row:after, .container:after {
   content: " ";
   display: table; }
