@@ -35,24 +35,24 @@ change this to your liking.
 	// calculate total width of the container
 	$total-width : ($column-width * $total-columns) + ($total-columns - 1) * $gutter-width;
 
-	// loop generate column names and values
-	@for $i from 0 to $total-columns {
-			.#{$prefix}-#{$i} {
-				width: ($column-width * $i) + ($i - 1) * $gutter-width;
-			}
-	}
-
-	// loop generate offset names and values
-	@for $i from 0 to $total-columns {
-			.#{$prefix}-offset-#{$i} {
-				margin-left: ($column-width * $i) + ($gutter-width * ($i + 1));
-			}
-	}
-
 	[class*="#{$prefix}"] {
 		float: left;
 		min-height: 1px; // prevent collapsing columns
 		margin-left: ($gutter-width);
+	}
+
+	// loop generate column names and values
+	@for $i from 0 through $total-columns {
+		.#{$prefix}-#{$i} {
+			width: ($column-width * $i) + ($i - 1) * $gutter-width;
+		}
+	}
+
+	// loop generate offset names and values
+	@for $i from 0 through $total-columns {
+		.#{$prefix}-offset-#{$i} {
+			margin-left: ($column-width * $i) + ($gutter-width * ($i + 1));
+		}
 	}
 
 	// create container class
