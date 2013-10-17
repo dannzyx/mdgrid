@@ -1,7 +1,7 @@
 mdGrid
 =======================
 
-A clean responsive grid system with a typographic baseline powered by
+A clean, responsive, extendable, customizable grid
 [LESS][1], based on [Bootstrap][3] and [Gridlock][4].
 
 
