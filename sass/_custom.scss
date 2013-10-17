@@ -1,69 +1,3 @@
-// styles
-body {
-	font-family: "Open sans";
-}
-
-* { transition: all 0.2s ease; }
-
-$heading: #333;
-$heading2: #555;
-
-
-hr {
-	margin: 20px 0;
-	border: 0;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #fff;
-}
-
-h1 {
-	margin-top:30px;
-	font-weight: 900;
-	color: $heading;
-	font-size:66px;
-	font-family: "Lobster";
-
-	small {
-		color: lighten($heading, 40%);
-		font-size: 33px;
-	}
-}
-
-h2 {
-	font-weight: 400;
-	color: $heading2;
-	font-size:24px;
-}
-
-.container {
-	margin:auto;
-	@extend .clearfix;
-}
-
-
-.column {
-	display: block;
-	background: lighten(#a4b4b3, 5%);
-	padding:10px 0;
-	line-height: 25px;
-	margin-bottom: 10px !important;
-	text-align: center;
-	text-transform: uppercase;
-	color: #fff;
-	font-size: 12px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-
-
-
-.label_d { display: block; }
-.label_t, .label_m { display: none; }
-
-
-
 // mdgrid creation
 
 // default: 12x60 + 12x20 = 960
@@ -81,12 +15,6 @@ h2 {
 // tablet & small desktops
 @media (min-width: 768px) and (max-width: 979px) {
 
-	.label_d { display: none; }
-	.label_t { display: block; }
-
-	// 12x44 + 12x20 = 768
-	@include mdgrid(desktop, 12, 44px, 20px);
-
 	// 6x108 + 6x20 = 768px
 	@include mdgrid(tablet, 6, 108px, 20px);
 
@@ -96,52 +24,16 @@ h2 {
 // phones
 @media screen and (max-width: 767px) {
 
-	.label_d { display: none; }
-	.label_t { display: none; }
-	.label_m { display: block; }
-
-	// 12x30 + 12x10 = 480px
-	@include mdgrid(desktop, 12, 20px, 20px);
-
 	// 2x220 + 2x20 = 480px
 	@include mdgrid(mobile, 2, 220px, 20px);
-
-	h1 {
-		font-size:33px;
-		small {
-			font-size:22px;
-		}
-	}
-
-	h2 {
-		font-size: 18px;
-	}
 
 }
 
 // phones old
 @media screen and (max-width: 500px) {
 
-	.label_d { display: none; }
-	.label_t { display: none; }
-	.label_m { display: block; }
-
-	// 12x20 + 12x10 = 360
-	@include mdgrid(desktop, 12, 10px, 20px);
-
 	// 2x160 + 2x20 = 360px
 	@include mdgrid(mobile, 2, 160px, 20px);
-
-	h1 {
-		font-size:33px;
-		small {
-			font-size:22px;
-		}
-	}
-
-	h2 {
-		font-size: 18px;
-	}
 
 }
 

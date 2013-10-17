@@ -11,9 +11,9 @@ Features
 - **Small in size** - Depending on how many grids you generate
 - **Highly Customizable** - Make your own prefixes.
 
-Usage
+Demo
 -------
-> mdgrid > .create(@prefix, @column-count, @column-width, @gutter-width);
+[Here][5]
 
 
 Authors
@@ -26,6 +26,6 @@ Authors
 [2]: http://sass-lang.com/
 [3]: http://getbootstrap.com/
 [4]: http://www.benplum.com/projects/gridlock/
-
+[5]: http://dannzyx.github.io/mdgrid/
 [6]: http://boombep.nl
 [7]: http://marksmits.com
