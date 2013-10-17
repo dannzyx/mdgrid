@@ -32,9 +32,9 @@ change this to your liking.
 
 
 // grid function
-#mdgrid {
 
-	.create(@prefix:desktop, @total-columns:@total-columns, @column-width:@column-width, @gutter-width:@gutter-width) {
+
+	.mdgrid(@prefix:desktop, @total-columns:@total-columns, @column-width:@column-width, @gutter-width:@gutter-width) {
 
 		// calculate total width of the container
 		@total-width: (@column-width * @total-columns) + (@total-columns - 1) * @gutter-width;
@@ -92,7 +92,7 @@ change this to your liking.
 
 	}
 
-}
+
 
 // defaults
 .row {
