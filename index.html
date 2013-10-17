@@ -424,65 +424,79 @@
 
 
 
-			<h2>Usage (LESS)</h2>
+			<h2>Usage</h2>
+
+			<h3>LESS / SASS</h3>
 
 			<pre class="code">
+				<code>
 #mdgrid > .create(desktop, 12, 60px, 20px);
-
 
 // large desktops
 @media (min-width: 1221px) {
-
 	// 12x80 + 12x20 = 1200
-	#mdgrid > .create(desktop, 12, 80px, 20px);
-
+	.mdgrid(desktop, 12, 80px, 20px);
 }
 
 // tablet & small desktops
 @media (min-width: 768px) and (max-width: 979px) {
 
-
-	// 12x44 + 12x20 = 768
-	#mdgrid > .create(desktop, 12, 44px, 20px);
-
 	// 6x108 + 6x20 = 768px
-	#mdgrid > .create(tablet, 6, 108px, 20px);
-
-
+	.mdgrid(tablet, 6, 108px, 20px);
 }
 
 // phones
 @media screen and (max-width: 767px) {
 
-
-	// 12x30 + 12x10 = 480px
-	#mdgrid > .create(desktop, 12, 20px, 20px);
-
 	// 2x220 + 2x20 = 480px
-	#mdgrid > .create(mobile, 2, 220px, 20px);
-
-
+	.mdgrid(mobile, 2, 220px, 20px);
 }
 
 // phones old
 @media screen and (max-width: 500px) {
 
-	// 12x20 + 12x10 = 360
-	#mdgrid > .create(desktop, 12, 10px, 20px);
-
 	// 2x160 + 2x20 = 360px
-	#mdgrid > .create(mobile, 2, 160px, 20px);
+	.mdgrid(mobile, 2, 160px, 20px);
 
 }
+				</code>
 			</pre>
 
 
-			<h2>Usage (SASS)</h2>
+			<h3>HTML</h3>
+			<p>Remember it's cascading, so the "largest" of columns come first.</p>
 
-			<pre class="code">
-@include create
-@include mdgrid();
+			<pre>
+				<code>
+&lt;div class=&quot;row&quot;&gt;
+
+	&lt;div class=&quot;desktop-6 tablet-3 mobile-2&quot;&gt;&lt;/div&gt;
+
+	&lt;div class=&quot;desktop-6 tablet-3 mobile-2&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+				</code>
 			</pre>
+
+			<h3>Result</h3>
+			<div class="row">
+				<div class="desktop-6 tablet-3 mobile-2">
+					<div class="column">
+						<span class="label_d">desktop-6</span>
+						<span class="label_t">tablet-3</span>
+						<span class="label_m">mobile-2</span>
+					</div>
+				</div>
+				<div class="desktop-6 tablet-3 mobile-2">
+					<div class="column">
+						<span class="label_d">desktop-6</span>
+						<span class="label_t">tablet-3</span>
+						<span class="label_m">mobile-2</span>
+					</div>
+				</div>
+			</div>
+
+
 
 
 

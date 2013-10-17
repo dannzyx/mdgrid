@@ -86,10 +86,22 @@ a.btn {
 }
 
 pre {
-	background: lighten(#a4b4b3, 20%);
-	padding:20px;
+	padding: 0px 40px;
 	.border-radius(3px);
-	font-size:11px;
+	font-size:12px;
+	font-family: monospace;
+	color: #1f4c7a;
+
+	code .attribute { color: hsl(40, 50%, 70%) }
+	code .variable  { color: hsl(120, 10%, 50%) }
+	code .element   { color: hsl(170, 20%, 50%) }
+	code .string, .regexp { color: hsl(75, 50%, 65%) }
+	code .class { color: hsl(40, 40%, 60%); font-weight: normal }
+	code .id { color: hsl(50, 40%, 60%); font-weight: normal }
+	code .comment { color: #ccc; font-weight: normal }
+	code .number, .color { color: hsl(10, 40%, 50%) }
+	code .class, code .mixin, .special { color: hsl(190, 20%, 50%) }
+
 }
 
 
@@ -173,6 +185,7 @@ pre {
 	}
 
 }
+
 
 
 
