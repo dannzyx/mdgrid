@@ -13,7 +13,7 @@ Features
 
 Usage
 -------
-mdgrid > .create(desktop, 12, 80px, 20px);
+> mdgrid > .create(@prefix, @column-count, @column-width, @gutter-width);
 
 
 Usage
