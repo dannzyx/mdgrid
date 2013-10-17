@@ -16,7 +16,7 @@ Usage
 > mdgrid > .create(@prefix, @column-count, @column-width, @gutter-width);
 
 
-Usage
+Authors
 -------
 
 - [Danny Degenkamp][6] & [Mark Smits][7]
