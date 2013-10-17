@@ -1,4 +1,6 @@
 mdgrid
 ======
 
-Responsive extendable grid
+# Responsive extendable grid
+
+## Usage
