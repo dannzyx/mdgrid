@@ -1,0 +1,69 @@
+/*
+Default variables;
+change this to your liking.
+*/
+
+// clearfix
+.clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+//  box sizing border-box
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// defaults
+.row, .container {
+	@extend .clearfix;
+}
+
+// grid function
+@mixin create($prefix:desktop, $total-columns:12, $column-width:60px, $gutter-width:20px) {
+
+	// calculate total width of the container
+	$total-width : ($column-width * $total-columns) + ($total-columns - 1) * $gutter-width;
+
+	// loop generate column names and values
+	@for $i from 0 to $total-columns {
+			.#{$prefix}-#{$i} {
+				width: ($column-width * $i) + ($i - 1) * $gutter-width;
+			}
+	}
+
+	// loop generate offset names and values
+	@for $i from 0 to $total-columns {
+			.#{$prefix}-offset-#{$i} {
+				margin-left: ($column-width * $i) + ($gutter-width * ($i + 1));
+			}
+	}
+
+	[class*="#{$prefix}"] {
+		float: left;
+		min-height: 1px; // prevent collapsing columns
+		margin-left: ($gutter-width);
+	}
+
+	// create container class
+	.container {
+		width: $total-width;
+	}
+
+	// create row class
+	.row {
+		margin-left: -($gutter-width);
+	}
+}
+
+
