@@ -41,7 +41,7 @@
 
 	// loop generate column names and values
 	.generateCols (@index) when (@index >= 0) {
-		.@{prefix}-@{index} {
+		.@{prefix}@{index} {
 			width: (@column-width * @index) + (@index - 1) * @gutter-width;
 		}
 
@@ -51,7 +51,7 @@
 
 	// loop generate offset names and values
 	.generateOffsets (@index) when (@index >= 0) {
-		.@{prefix}-offset-@{index} {
+		.@{prefix}offset-@{index} {
 			margin-left: (@column-width * @index) + (@gutter-width * (@index + 1));
 		}
 
@@ -62,6 +62,7 @@
 	// create container class
 	.container {
 		width: @total-width;
+		margin:0 auto;
 	}
 
 	// create row class

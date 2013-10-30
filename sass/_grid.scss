@@ -38,14 +38,14 @@
 
 	// loop generate column names and values
 	@for $i from 0 through $total-columns {
-		.#{$prefix}-#{$i} {
+		.#{$prefix}#{$i} {
 			width: ($column-width * $i) + ($i - 1) * $gutter-width;
 		}
 	}
 
 	// loop generate offset names and values
 	@for $i from 0 through $total-columns {
-		.#{$prefix}-offset-#{$i} {
+		.#{$prefix}offset-#{$i} {
 			margin-left: ($column-width * $i) + ($gutter-width * ($i + 1));
 		}
 	}
@@ -58,6 +58,7 @@
 	// create row class
 	.row {
 		margin-left: -($gutter-width);
+		margin:0 auto;
 	}
 }
 
