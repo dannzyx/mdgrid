@@ -108,14 +108,14 @@ pre {
 // mdgrid creation
 
 // default: 12x60 + 12x20 = 960
-#mdgrid > .create(desktop, 12, 60px, 20px);
+.mdgrid(desktop, 12, 60px, 20px);
 
 
 // large desktops
 @media (min-width: 1221px) {
 
 	// 12x80 + 12x20 = 1200
-	#mdgrid > .create(desktop, 12, 80px, 20px);
+	.mdgrid(desktop-, 12, 80px, 20px);
 
 }
 
@@ -126,10 +126,10 @@ pre {
 	.label_t { display: block; }
 
 	// 12x44 + 12x20 = 768
-	#mdgrid > .create(desktop, 12, 44px, 20px);
+	.mdgrid(desktop-, 12, 44px, 20px);
 
 	// 6x108 + 6x20 = 768px
-	#mdgrid > .create(tablet, 6, 108px, 20px);
+	.mdgrid(tablet-, 6, 108px, 20px);
 
 
 }
@@ -142,10 +142,10 @@ pre {
 	.label_m { display: block; }
 
 	// 12x30 + 12x10 = 480px
-	#mdgrid > .create(desktop, 12, 20px, 20px);
+	.mdgrid(desktop-, 12, 20px, 20px);
 
 	// 2x220 + 2x20 = 480px
-	#mdgrid > .create(mobile, 2, 220px, 20px);
+	.mdgrid(mobile-, 2, 220px, 20px);
 
 	h1 {
 		font-size:33px;
@@ -168,10 +168,10 @@ pre {
 	.label_m { display: block; }
 
 	// 12x20 + 12x10 = 360
-	#mdgrid > .create(desktop, 12, 10px, 20px);
+	.mdgrid(desktop-, 12, 10px, 20px);
 
 	// 2x160 + 2x20 = 360px
-	#mdgrid > .create(mobile, 2, 160px, 20px);
+	.mdgrid(mobile-, 2, 160px, 20px);
 
 	h1 {
 		font-size:33px;

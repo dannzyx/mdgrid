@@ -16,15 +16,12 @@
 	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
 	<!-- Facebook Metadata /-->
-	<meta property="fb:page_id" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:description" content=""/>
-	<meta property="og:title" content=""/>
+	<meta property="og:description" content="responsive. extendable. customizable."/>
+	<meta property="og:title" content="mdGrid"/>
 
 	<!-- Google+ Metadata /-->
-	<meta itemprop="name" content="">
-	<meta itemprop="description" content="">
-	<meta itemprop="image" content="">
+	<meta itemprop="name" content="mdGrid">
+	<meta itemprop="description" content="responsive. extendable. customizable.">
 
 	<link href='http://fonts.googleapis.com/css?family=Lobster|Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -440,7 +437,7 @@
 			<p>Basic grid setup for a 960 grid (less)</p>
 			<pre>
 				<code>
-@prefix: column;
+@prefix: column-;
 @column-count: 12;
 @column-width: 60px;
 @gutter-width: 20px;
@@ -457,7 +454,7 @@
 .container:before,.container:after{content:" ";display:table}
 .container:after{clear:both}
 .row{margin-left:-20px}
-[class*="column"]{float:left;min-height:1px;margin-left:20px}
+[class*="column-"]{float:left;min-height:1px;margin-left:20px}
 .container{width:1180px}
 .column-12{width:1180px}
 .column-11{width:1080px}
