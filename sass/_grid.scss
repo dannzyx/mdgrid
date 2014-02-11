@@ -53,12 +53,12 @@
 	// create container class
 	.container {
 		width: $total-width;
+		margin:0 auto;
 	}
 
 	// create row class
 	.row {
 		margin-left: -($gutter-width);
-		margin:0 auto;
 	}
 }
 
